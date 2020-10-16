@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ProjetMetier.Vin">
+    <Position X="8" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAABAIAIAAABCQAAAQABAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Vin.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LeCepage" />
+      <Property Name="LaCouleur" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetMetier.Couleur">
+    <Position X="11.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Couleur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjetMetier.Cepage">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Cepage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjetMetier.Bouteille">
+    <Position X="4.25" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BQAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQ=</HashCode>
+      <FileName>Bouteille.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LeVin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetMetier.GestionnaireDeCaves">
+    <Position X="0.5" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAACABAAAAAAAAgAAAAAAAAEAAIAAAAAAAA=</HashCode>
+      <FileName>GestionnaireDeCaves.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

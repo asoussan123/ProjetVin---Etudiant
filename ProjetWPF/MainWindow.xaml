@@ -1,0 +1,89 @@
+﻿<Window x:Class="ProjetWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Avec modération" FontSize="80" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Grid.Row="0"
+                   Foreground="BlueViolet"></TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Liste des caves" FontSize="20" VerticalAlignment="Center"
+                   Grid.Column="0"
+                   Foreground="BlueViolet"></TextBlock>
+            <TextBlock Text="Liste des bouteilles" FontSize="20" VerticalAlignment="Center"
+                   Grid.Column="1"
+                   Foreground="BlueViolet"></TextBlock>
+            <TextBlock Text="Vin" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Grid.Column="2"
+                   Foreground="BlueViolet"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="350"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ListView  Grid.Column="0" x:Name="lvCaves" SelectionChanged="lvCaves_SelectionChanged">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding}" Width="100" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView Grid.Column="1" x:Name="lvBouteilles" SelectionChanged="lvBouteilles_SelectionChanged">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding IdBouteille}" Width="50" VerticalAlignment="Center"></TextBlock>
+                            <TextBlock Text="{Binding QuantiteBouteille}" Width="50" VerticalAlignment="Center"></TextBlock>
+                            <TextBlock Text="{Binding LeVin.NomVin}" Width="200" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackPanel Grid.Column="2">
+                <TextBlock Padding="20,0,0,0" Text="Millésime"></TextBlock>
+                <TextBlock Foreground="DarkGoldenrod" HorizontalAlignment="Center" Name="txtMillesime"></TextBlock>
+                <TextBlock Padding="20,0,0,0" Text="Nom du cépage"></TextBlock>
+                <TextBlock Foreground="DarkGoldenrod" HorizontalAlignment="Center" Name="txtNomCepage"></TextBlock>
+                <TextBlock Padding="20,0,0,0" Text="Couleur du vin"></TextBlock>
+                <TextBlock Foreground="DarkGoldenrod" HorizontalAlignment="Center" Name="txtCouleur"></TextBlock>
+                <TextBlock Padding="20,0,0,0" Text="Prix du vin"></TextBlock>
+                <TextBlock Foreground="DarkGoldenrod" HorizontalAlignment="Center" Name="txtPrix"></TextBlock>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="3">
+            <WrapPanel Orientation="Horizontal">
+                <TextBlock Text="Nombre de bouteilles dans la cave" Width="220"></TextBlock>
+                <TextBlock HorizontalAlignment="Center" Foreground="DarkGoldenrod" Name="txtNbBouteilles" Width="50"></TextBlock>
+            </WrapPanel>
+            <Line Height="5"></Line>
+            <WrapPanel Orientation="Horizontal">
+                <TextBlock Text="Nombre de bouteilles de vins rouges" Width="220"></TextBlock>
+                <TextBlock HorizontalAlignment="Center" Foreground="DarkGoldenrod" Name="txtNbBouteillesDeRouges" Width="50"></TextBlock>
+            </WrapPanel>
+            <Line Height="5"></Line>
+            <WrapPanel Orientation="Horizontal">
+                <TextBlock Text="Valeur de la cave" Width="220"></TextBlock>
+                <TextBlock HorizontalAlignment="Center" Foreground="DarkGoldenrod" Name="txtValeurDeLaCave" Width="50"></TextBlock>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>
